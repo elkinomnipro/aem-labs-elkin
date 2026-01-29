@@ -17,7 +17,7 @@ export default function decorate(block) {
 
   // Get the title (second row)
   const titleRow = rows[1];
-  const title = titleRow?.querySelector('h2');
+  const title = titleRow?.querySelector('h1');
 
   // Get button text (third row)
   const buttonRow = rows[2];
@@ -79,7 +79,7 @@ export default function decorate(block) {
 
   // Add reserve button
   const button = document.createElement('a');
-  button.className = 'button primary';
+  button.className = 'button';
   button.href = '#';
   button.textContent = ctaText;
   contentBox.appendChild(button);
