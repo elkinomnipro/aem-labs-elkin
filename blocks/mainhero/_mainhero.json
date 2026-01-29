@@ -42,11 +42,9 @@
           "value": ""
         },
         {
-          "component": "text",
-          "valueType": "string",
+          "component": "button",
           "name": "ctaLink",
-          "label": "CTA Link",
-          "value": ""
+          "label": "CTA Link"
         }
       ]
     }
