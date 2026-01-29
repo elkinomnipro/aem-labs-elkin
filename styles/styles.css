@@ -18,6 +18,8 @@
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
+  --layout-background-color: #f8f8f8;
+  --layout-border-color: #e1e1e1;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -36,7 +38,13 @@
   --heading-font-size-s: 24px;
   --heading-font-size-xs: 22px;
 
-  /* nav height */
+  /* border radius */
+  --image-border-radius-m: 8px;
+  --image-border-radius-l: 16px;
+  --image-border-radius-xl: 24px;
+  --image-border-radius-xxl: 30px;
+
+  /* nav */
   --nav-height: 64px;
 }
 
@@ -86,6 +94,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
+  border-bottom: 1px solid var(--layout-border-color);
 }
 
 header .header,
@@ -236,10 +245,6 @@ main > .section > div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
-}
-
-main > .section:first-of-type {
-  margin-top: 0;
 }
 
 @media (width >= 900px) {
