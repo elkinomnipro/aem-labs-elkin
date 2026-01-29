@@ -42,37 +42,11 @@
           "value": ""
         },
         {
-          "component": "richtext",
-          "valueType": "string",
-          "name": "subtitle",
-          "label": "Subtitle",
-          "value": ""
-        },
-        {
           "component": "text",
           "valueType": "string",
           "name": "ctaText",
           "label": "CTA Text",
           "value": ""
-        },
-        {
-          "component": "select",
-          "name": "linkType",
-          "label": "Type",
-          "options": [
-            {
-              "name": "default",
-              "value": ""
-            },
-            {
-              "name": "primary",
-              "value": "primary"
-            },
-            {
-              "name": "secondary",
-              "value": "secondary"
-            }
-          ]
         }
       ]
     }

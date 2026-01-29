@@ -19,6 +19,11 @@ export default function decorate(block) {
   const titleRow = rows[1];
   const title = titleRow?.querySelector('h2');
 
+  // Get button text (third row)
+  const buttonRow = rows[2];
+  const ctaTextEl = buttonRow?.querySelector('div');
+  const ctaText = ctaTextEl?.textContent?.trim();
+
   // Clear the block and rebuild structure
   block.innerHTML = '';
 
@@ -51,7 +56,7 @@ export default function decorate(block) {
   subtitle.textContent = 'Aprovecha, reserva hoy y viaja hasta marzo de 2026.';
   contentBox.appendChild(subtitle);
 
-  // Add travel info section
+  // Add hardcoded travel info section
   const travelInfo = document.createElement('div');
   travelInfo.className = 'travel-info';
 
@@ -74,9 +79,9 @@ export default function decorate(block) {
 
   // Add reserve button
   const button = document.createElement('a');
-  button.className = 'button';
+  button.className = 'button primary';
   button.href = '#';
-  button.textContent = 'Reservar';
+  button.textContent = ctaText;
   contentBox.appendChild(button);
 
   contentContainer.appendChild(contentBox);
