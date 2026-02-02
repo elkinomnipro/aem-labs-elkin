@@ -34,57 +34,45 @@ export default function decorate(block) {
     backgroundContainer.appendChild(picture);
   }
 
-  // Create the content overlay container
+  // Create the content container
   const contentContainer = document.createElement('div');
   contentContainer.className = 'content';
 
-  // Create the left content box
-  const contentBox = document.createElement('div');
-  contentBox.className = 'box';
+  // Create the text content overlay
+  const textContentOverlay = document.createElement('div');
+  textContentOverlay.className = 'text-content';
 
   // Add title
   if (title) {
     const titleElement = document.createElement('h1');
     titleElement.className = 'title';
     titleElement.textContent = title.textContent;
-    contentBox.appendChild(titleElement);
+    textContentOverlay.appendChild(titleElement);
   }
 
-  // Add hardcoded subtitle
-  const subtitle = document.createElement('p');
-  subtitle.className = 'subtitle';
-  subtitle.textContent = 'Aprovecha, reserva hoy y viaja hasta marzo de 2026.';
-  contentBox.appendChild(subtitle);
+  contentContainer.appendChild(textContentOverlay);
 
-  // Add hardcoded travel info section
-  const travelInfo = document.createElement('div');
-  travelInfo.className = 'travel-info';
+  // Add description
+  const firstParagraphElement = document.createElement('p');
+  firstParagraphElement.className = 'subtitle';
+  firstParagraphElement.textContent = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';
+  textContentOverlay.appendChild(firstParagraphElement);
+  const secondParagraphElement = document.createElement('p');
+  secondParagraphElement.className = 'description';
+  secondParagraphElement.textContent = 'Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.';
+  textContentOverlay.appendChild(secondParagraphElement);
 
-  const travelLabel = document.createElement('span');
-  travelLabel.className = 'travel-label';
-  travelLabel.textContent = 'Trayecto desde';
-  travelInfo.appendChild(travelLabel);
+  // Create the buttons content container
+  const buttonContentContainer = document.createElement('div');
+  buttonContentContainer.className = 'buttons-content';
 
-  const price = document.createElement('div');
-  price.className = 'price';
-  price.textContent = 'USD 240';
-  travelInfo.appendChild(price);
-
-  const route = document.createElement('div');
-  route.className = 'route';
-  route.textContent = 'Bogotá a Miami';
-  travelInfo.appendChild(route);
-
-  contentBox.appendChild(travelInfo);
-
-  // Add reserve button
+  // Add button
   const button = document.createElement('a');
   button.className = 'button';
   button.href = '#';
   button.textContent = ctaText;
-  contentBox.appendChild(button);
-
-  contentContainer.appendChild(contentBox);
+  buttonContentContainer.appendChild(button);
+  contentContainer.appendChild(buttonContentContainer);
 
   // Assemble the block
   block.appendChild(backgroundContainer);
