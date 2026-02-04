@@ -5,9 +5,6 @@
  * @param {Element} block - The main-hero block element
  */
 export default function decorate(block) {
-  console.info('Decorating main-hero block');
-  console.info(block);
-
   // Extract content from the block structure
   const rows = [...block.children];
 

@@ -56,10 +56,12 @@
 
 /* Buttons Content */
 .main-hero .buttons-content .button {
+  background-color: #3b63fb;
   margin: 0;
   transition: box-shadow 0.2s;
 }
 
 .main-hero .buttons-content .button:hover {
+  background-color: #1d3ecf;
   box-shadow: 0 4px 12px rgb(255 255 255 / 30%);
 }

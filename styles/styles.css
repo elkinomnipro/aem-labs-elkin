@@ -11,6 +11,28 @@
  */
 
 :root {
+  /* Design Tokens
+   */
+
+  /* Token Primitivo */
+  --color-red-100: #ff3b30;
+  --color-red-200: #bf0000; 
+  --color-blue-100: #3b63fb;
+  --color-blue-200: #1d3ecf;
+  --color-green-100: #34c759;
+  --color-green-200: #094e1a;
+
+  /* Token Alias */
+  --color-brand-primary: var(--color-red-100);
+  --color-brand-secondary: var(--color-red-200);
+
+  /* Token Componente */
+  --color-background-button-primary: var(--color-brand-primary);
+  --color-background-button-primary-hover: var(--color-brand-secondary);
+
+  /* Adobe Native UI Variables
+   */
+
   /* colors */
   --background-color: white;
   --light-color: #f8f8f8;
@@ -190,7 +212,7 @@ button {
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
+  background-color: var(--color-background-button-primary);
   color: var(--background-color);
   cursor: pointer;
   overflow: hidden;
@@ -202,7 +224,7 @@ a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
-  background-color: var(--link-hover-color);
+  background-color: var(--color-background-button-primary-hover);
   cursor: pointer;
 }
 
