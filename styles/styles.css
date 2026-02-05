@@ -16,7 +16,7 @@
 
   /* Token Primitivo */
   --color-red-100: #ff3b30;
-  --color-red-200: #bf0000; 
+  --color-red-200: #bf0000;
   --color-blue-100: #3b63fb;
   --color-blue-200: #1d3ecf;
   --color-green-100: #34c759;
@@ -185,7 +185,7 @@ button {
 }
 
 /* links */
-a:any-link {
+a {
   color: var(--link-color);
   text-decoration: none;
   overflow-wrap: break-word;
@@ -197,8 +197,7 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link,
-button {
+a.button {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
@@ -221,21 +220,12 @@ button {
 }
 
 a.button:hover,
-a.button:focus,
-button:hover,
-button:focus {
+a.button:focus {
   background-color: var(--color-background-button-primary-hover);
   cursor: pointer;
 }
 
-button:disabled,
-button:disabled:hover {
-  background-color: var(--light-color);
-  cursor: unset;
-}
-
-a.button.secondary,
-button.secondary {
+a.button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);

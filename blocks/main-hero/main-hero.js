@@ -1,4 +1,11 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-console */
+
+import { h, render } from 'preact';
+import htm from 'htm';
+import { Button } from '../../uikit/atoms/button/button.js';
+
+const html = htm.bind(h);
 
 /**
  * Decorate the main-hero block
@@ -68,10 +75,20 @@ export default function decorate(block) {
   button.className = 'button';
   button.href = '#';
   button.textContent = ctaText;
-  buttonContentContainer.appendChild(button);
+  // buttonContentContainer.appendChild(button);
   contentContainer.appendChild(buttonContentContainer);
 
   // Assemble the block
   block.appendChild(backgroundContainer);
   block.appendChild(contentContainer);
+
+  render(
+    html`
+      <${Button}
+        onClick=${() => console.log('Click!')}>
+        ${ctaText}
+      </${Button}>
+    `,
+    buttonContentContainer,
+  );
 }

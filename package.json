@@ -12,7 +12,15 @@
     "build:json:models": "merge-json-cli -i \"models/_component-models.json\" -o \"component-models.json\"",
     "build:json:definitions": "merge-json-cli -i \"models/_component-definition.json\" -o \"component-definition.json\"",
     "build:json:filters": "merge-json-cli -i \"models/_component-filters.json\" -o \"component-filters.json\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "aem up",
+    "install:libraries": "node postinstall.js",
+    "postinstall": "npm run install:libraries",
+    "postupdate": "npm run install:libraries",
+    "build": "npm-run-all -p build:json tw:build",
+    "dev": "npm-run-all -p start tw:watch",
+    "tw:build": "tailwindcss -i ./styles/src/input.css -o ./styles/styles-tw.css --minify",
+    "tw:watch": "tailwindcss -i ./styles/src/input.css -o ./styles/styles-tw.css --watch"
   },
   "repository": {
     "type": "git",
@@ -26,6 +34,8 @@
   "homepage": "https://github.com/adobe/aem-boilerplate#readme",
   "devDependencies": {
     "@babel/eslint-parser": "7.28.6",
+    "@dropins/build-tools": "^1.0.1",
+    "@tailwindcss/cli": "^4.1.18",
     "eslint": "8.57.1",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.32.0",
@@ -35,6 +45,11 @@
     "merge-json-cli": "1.0.4",
     "npm-run-all": "4.1.5",
     "stylelint": "17.0.0",
-    "stylelint-config-standard": "40.0.0"
+    "stylelint-config-standard": "40.0.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "htm": "^3.1.1",
+    "preact": "^10.28.3"
   }
 }

@@ -4,6 +4,34 @@
   move-to-http-header="true"
 >
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<script nonce="aem" type="speculationrules">
+    {
+        "prerender": [{
+            "where": {
+                "href_matches": "/*"
+            },
+            "eagerness": "moderate"
+        }]
+    }
+</script>
+
+<script nonce="aem" type="importmap">
+  {
+    "imports": {
+      "preact": "/scripts/preact/dist/preact.mjs",
+      "preact/hooks": "/scripts/preact/hooks/dist/hooks.mjs",
+      "htm": "/scripts/htm/dist/htm.mjs"
+    }
+  }
+</script>
+
 <script nonce="aem" src="/scripts/aem.js" type="module"></script>
 <script nonce="aem" src="/scripts/scripts.js" type="module"></script>
+
 <link rel="stylesheet" href="/styles/styles.css"/>
+<link rel="stylesheet" href="/styles/styles-tw.css" />
+
+<link rel="modulepreload" href="/scripts/preact/dist/preact.mjs" />
+<link rel="modulepreload" href="/scripts/preact/hooks/dist/hooks.mjs" />
+<link rel="modulepreload" href="/scripts/htm/dist/htm.mjs" />
