@@ -216,6 +216,34 @@
     ]
   },
   {
+    "id": "main-banner",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "description": "Main heading for the banner (H1 or H2 recommended)",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description",
+        "description": "Supporting text below the title",
+        "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "cta",
+        "label": "Call to Action",
+        "description": "Button text and link destination"
+      }
+    ]
+  },
+  {
     "id": "main-hero",
     "fields": [
       {

@@ -51,7 +51,8 @@
         "cards",
         "columns",
         "fragment",
-        "main-hero"
+        "main-hero",
+        "main-banner"
       ]
     }
   ]
