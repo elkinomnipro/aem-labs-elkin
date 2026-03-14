@@ -236,10 +236,23 @@
       },
       {
         "component": "aem-content",
+        "name": "link",
+        "label": "Link",
+        "description": "Destination for the link"
+      },
+      {
+        "component": "text",
         "valueType": "string",
-        "name": "cta",
-        "label": "Call to Action",
-        "description": "Button text and link destination"
+        "name": "linkText",
+        "label": "Link Text",
+        "description": "Text for the link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linkTitle",
+        "label": "Link Title",
+        "description": "Title for the link"
       }
     ]
   },
