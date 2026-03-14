@@ -20,8 +20,9 @@ export default function decorate(block) {
   // Extract CTA (row 3)
   const ctaRow = rows[2];
   const ctaLink = ctaRow?.querySelector('a');
-  const ctaText = ctaLink?.textContent?.trim();
   const ctaHref = ctaLink?.getAttribute('href');
+  const ctaText = ctaLink?.textContent?.trim();
+  const ctaTitle = ctaLink?.getAttribute('title')?.trim() || '';
 
   // Clear the block
   block.innerHTML = '';
@@ -47,18 +48,15 @@ export default function decorate(block) {
   }
 
   // Add CTA if present with valid href
-  if (ctaText && ctaHref) {
+  if (ctaHref && ctaText) {
     const cta = document.createElement('a');
-    cta.className = 'main-banner-cta button';
+    cta.className = 'button';
     cta.href = ctaHref;
     cta.textContent = ctaText;
+    if (ctaTitle) {
+      cta.title = ctaTitle;
+    }
     contentContainer.appendChild(cta);
-  } else if (ctaText) {
-    // CTA text without link - render as non-clickable text
-    const ctaDisabled = document.createElement('span');
-    ctaDisabled.className = 'main-banner-cta button disabled';
-    ctaDisabled.textContent = ctaText;
-    contentContainer.appendChild(ctaDisabled);
   }
 
   // Add content container to block
